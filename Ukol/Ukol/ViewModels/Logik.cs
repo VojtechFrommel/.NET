@@ -5,13 +5,12 @@ using System.Threading.Tasks;
 
 namespace Ukol.ViewModels
 {
-    public class Data
+    public class Logik
     {
         public int FromEntry { get; set; }
         public int ToEntry { get; set; }
-        public int Range => ToEntry - FromEntry;
-
-        //generování random čísla
-
+        public int Secret { get; set; }
+        public int Guess { get; set; }
+        public bool Win { get; set; }
     }
 }

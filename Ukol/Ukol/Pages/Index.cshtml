@@ -1,11 +1,27 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Logik page";
 }
 
-<h1>Myslím si číslo..</h1>
+<h1>Logik</h1>
 
-<form method="post">
+<div>
+    <ul>
+        <li><a asp-page="./index" asp-page-handler="Range" asp-route-from="1" asp-route-to="10">1 to 10</a></li>
+        <li><a asp-page="./index" asp-page-handler="Range" asp-route-from="1" asp-route-to="100">1 to 100</a></li>
+        <li><a asp-page="./index" asp-page-handler="Range" asp-route-from="1" asp-route-to="1000">1 to 1000</a></li>
+    </ul>
+</div>
+@{if(Model.Data.ToEntry != 0)
+    {
+    <form>
+        <input />
+    </form>
+    }
+}
+@{if (Model.Data.Win)
+    {
 
-</form>
+    }
+}

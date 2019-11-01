@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Ukol.ViewModels;
 
 namespace Ukol.Pages
 {
@@ -17,9 +18,15 @@ namespace Ukol.Pages
             _logger = logger;
         }
 
+        public Logik Data{get;set;}
+
         public void OnGet()
         {
-
+            Data = new Logik { FromEntry = 0,ToEntry=0 };
+        }
+        public void OnGetRange(int from, int to)
+        {
+            Data = new Logik { FromEntry = from, ToEntry = to};
         }
     }
 }
