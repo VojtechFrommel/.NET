@@ -27,6 +27,14 @@ namespace Ukol.Pages
         public void OnGetRange(int from, int to)
         {
             Data = new Logik { FromEntry = from, ToEntry = to};
+            Data.Secret = makeSecret(to);
+        }
+
+        public int makeSecret(int to)
+        {
+            Random rnd = new Random();
+            int rndvalue = rnd.Next(1,to);
+            return rndvalue;
         }
     }
 }

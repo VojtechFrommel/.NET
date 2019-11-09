@@ -11,6 +11,7 @@ namespace Ukol.ViewModels
         public int ToEntry { get; set; }
         public int Secret { get; set; }
         public int Guess { get; set; }
-        public bool Win { get; set; }
+        public bool Win { get; set; } = false;
+        public bool Restart { get; set; } = true;
     }
 }

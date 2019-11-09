@@ -3,25 +3,33 @@
 @{
     ViewData["Title"] = "Logik page";
 }
+@if (Model.Data.Restart)
+{
+    <h1>Logik</h1>
 
-<h1>Logik</h1>
+    <div>
+        <ul>
+            <li><a asp-page="./index" asp-page-handler="Range" asp-route-from="1" asp-route-to="10">1 to 10</a></li>
+            <li><a asp-page="./index" asp-page-handler="Range" asp-route-from="1" asp-route-to="100">1 to 100</a></li>
+            <li><a asp-page="./index" asp-page-handler="Range" asp-route-from="1" asp-route-to="1000">1 to 1000</a></li>
+        </ul>
+    </div>
+}
 
-<div>
-    <ul>
-        <li><a asp-page="./index" asp-page-handler="Range" asp-route-from="1" asp-route-to="10">1 to 10</a></li>
-        <li><a asp-page="./index" asp-page-handler="Range" asp-route-from="1" asp-route-to="100">1 to 100</a></li>
-        <li><a asp-page="./index" asp-page-handler="Range" asp-route-from="1" asp-route-to="1000">1 to 1000</a></li>
-    </ul>
-</div>
-@{if(Model.Data.ToEntry != 0)
+@{if (Model.Data.ToEntry != 0)
     {
-    <form>
-        <input />
-    </form>
+        <form>
+            <p>Myslím si číslo..</p>
+            <input />
+            <button>Hádám</button>
+        </form>
     }
 }
 @{if (Model.Data.Win)
     {
-
+        <div>
+            <p>Výhra!</p>
+            <button>HRÁT ZNOVU</button>
+        </div>
     }
 }
