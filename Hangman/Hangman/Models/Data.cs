@@ -9,6 +9,7 @@ namespace Hangman.Models
     {
         public static string WordToGuess { get; set; }
         public static string Winner { get; set; }
+        public static int NumOfPlayers { get; set; }
         public static List<char> TriedChars = new List<char>();
     }
 }

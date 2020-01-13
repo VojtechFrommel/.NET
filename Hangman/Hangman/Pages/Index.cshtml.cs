@@ -11,6 +11,7 @@ namespace Hangman.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        public int numOfPlayers;
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -20,6 +21,16 @@ namespace Hangman.Pages
         public void OnGet()
         {
 
+        }
+        public void OnPost()
+        {
+            if (numOfPlayers <= 0) return;
+            if (numOfPlayers > 3) return;
+            else
+            {
+                Models.Data.NumOfPlayers = numOfPlayers;
+                RedirectToPage("EnterPage");
+            }
         }
     }
 }
