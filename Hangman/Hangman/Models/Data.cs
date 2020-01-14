@@ -15,7 +15,6 @@ namespace Hangman.Models
         {
 
         }
-
         public string WordToGuess { get { return _wordToGuess; } set { _wordToGuess = value; } }
         public string Winner { get { return _winner; } set { _winner = value; } }
         public int NumOfPlayers { get { return _numOfPlayers; } set { _numOfPlayers = value; } }
