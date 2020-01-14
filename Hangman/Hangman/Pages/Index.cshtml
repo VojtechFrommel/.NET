@@ -4,10 +4,10 @@
     ViewData["Title"] = "Hangman";
 }
 
-<form>
+<form method="post">
     <div>
         <label>Number of Players:</label>
-        <input />
-        <button>Continue</button>
+        <input asp-for="numOfPlayers" />
+        <button type="submit">Continue</button>
     </div>
 </form>

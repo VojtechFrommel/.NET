@@ -12,10 +12,11 @@ namespace Hangman.Pages
     public class EnterPageModel : PageModel
     {
         public IData data;
-        private List<string> names = new List<string>();
+        public string[] names;// = new string[];
         public EnterPageModel(IData data)
         {
             this.data = data;
+            names = new string[data.NumOfPlayers];
         }
         public void OnGet()
         {
