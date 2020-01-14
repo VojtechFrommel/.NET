@@ -12,6 +12,7 @@ namespace Hangman.Pages
     {
         public IData data;
         public string guess;
+        private char[] charArray;
         public GamePageModel(IData data)
         {
             this.data = data;
@@ -21,8 +22,9 @@ namespace Hangman.Pages
 
         }
         public void OnPost()
-        { 
-        
+        {
+            charArray = guess.ToCharArray();
+            //foreach - porovnej chararray s hádaným slovem. Pokud je chararray.len > 1 a netrefí se, tak hráč vypadne
         }
     }
 }

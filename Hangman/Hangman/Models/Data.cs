@@ -10,6 +10,8 @@ namespace Hangman.Models
     {
         private string _wordToGuess { get; set; }
         public string WordToGuess { get { return _wordToGuess; } set { _wordToGuess = value; } }
+        private string[] _wordsToGuess { get; set; } = { "abyss", "void", "soul", "boggle", "ivory", "fjord" };
+        public string[] WordsToGuess { get { return _wordsToGuess; } set { _wordsToGuess = value; } }
         private string _winner { get; set; }
         public string Winner { get { return _winner; } set { _winner = value; } }
         private int _numOfPlayers { get; set; }
@@ -20,6 +22,7 @@ namespace Hangman.Models
         public List<char> TriedChars { get { return _triedChars; } set { _triedChars = value; } }
         private List<Player> _players { get; set; }
         public List<Player> Players { get { return _players; } set { _players = value; } }
+
         public Data()
         {
             _wordToGuess = WordToGuess;

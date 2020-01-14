@@ -13,6 +13,7 @@ namespace Hangman.Pages
     {
         public IData data;
         public string[] names;// = new string[];
+        private Random rnd;
         public EnterPageModel(IData data)
         {
             this.data = data;
@@ -24,6 +25,10 @@ namespace Hangman.Pages
         }
         public IActionResult OnPost()
         {
+            //Vybrání random slova
+            rnd = new Random();
+            data.WordToGuess = data.WordsToGuess[rnd.Next(0, data.WordsToGuess.Length - 1)];
+            //index hráče v pořadí
             data.PlayerIndex = 0;
             //uložit players
             for (int i = 0; i < data.NumOfPlayers; i++)

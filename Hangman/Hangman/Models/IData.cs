@@ -7,6 +7,7 @@ namespace Hangman.Models
     public interface IData
     {
         string WordToGuess { get; set; }
+        string[] WordsToGuess { get; set; }
         string Winner { get; set; }
         int NumOfPlayers { get; set; }
         List<char> TriedChars { get; set; }
