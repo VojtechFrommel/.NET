@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Hangman.Models;
@@ -27,7 +28,7 @@ namespace Hangman.Pages
         }
         public IActionResult OnPost()
         {
-            //System.Diagnostics.Debug.WriteLine("hello");
+            Debug.Write(numOfPlayers);
             //if (Convert.ToInt32(numOfPlayers) <= 0 || Convert.ToInt32(numOfPlayers) > 3) return RedirectToPage("Index");
             //else
             //{

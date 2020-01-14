@@ -11,5 +11,6 @@ namespace Hangman.Models
         int NumOfPlayers { get; set; }
         List<char> TriedChars { get; set; }
         List<Player> Players { get; set; }
+        int PlayerIndex { get; set; }
     }
 }
