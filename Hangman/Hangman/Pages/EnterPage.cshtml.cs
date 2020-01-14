@@ -12,12 +12,14 @@ namespace Hangman.Pages
     public class EnterPageModel : PageModel
     {
         public IData data;
-        public string[] names;// = new string[];
         private Random rnd;
+
+        [BindProperty]
+        public string[] Names { get; set; }
         public EnterPageModel(IData data)
         {
             this.data = data;
-            names = new string[data.NumOfPlayers];
+            //Names = new string[data.NumOfPlayers];
         }
         public void OnGet()
         {
@@ -33,7 +35,7 @@ namespace Hangman.Pages
             //uložit players
             for (int i = 0; i < data.NumOfPlayers; i++)
             {
-                data.Players.Add(new Player(names[i], 0));
+                data.Players.Add(new Player(Names[i], 0));
             }
             //přepnout na game stránku
             return RedirectToPage("GamePage");

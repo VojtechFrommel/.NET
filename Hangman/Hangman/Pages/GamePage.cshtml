@@ -5,35 +5,42 @@
 }
 
 <h1>GamePage</h1>
-<div class="col-4">
-    @{
-        @*informace o tom kdo je na řadě atd..*@
-        <label>Na řadě je hráč: @Model.data.Players[Model.data.PlayerIndex]</label>
-        @*generování až 3 hráčů s jejich jmény sem*@
-        @for (int i = 0; i != 3; i++)
-        {
-            <label>@Model.data.Players[i].Nickname</label>
+<div class="row">
+    <div class="col-4">
+        @{
+            @*informace o tom kdo je na řadě atd..*@
+            <label>Na řadě je hráč: @Model.data.Players[Model.data.PlayerIndex].Nickname</label>
             <br />
-            <p>mistakes: @Model.data.Players[i].Mistakes/10</p>
+            @*generování až 3 hráčů s jejich jmény sem*@
+            @for (int i = 0; i != Model.data.NumOfPlayers; i++)
+            {
+                <label>@Model.data.Players[i].Nickname</label>
+                <br />
+                <p>mistakes: @Model.data.Players[i].Mistakes/10</p>
+            }
         }
-    }
-</div>
-<div class="col-4">
-    @*Tady bude submit+input*@
-    <form method="post">
-        <label>Písmeno nebo celé slovo, které chcete hádat</label>
-        <input asp-for="guess"/>
-        <button type="submit">Guess</button>
-    </form>
-</div>
-<div class="col-4">
-    @*Tady bude průběh hry*@
-    @{ 
-        for (int i = 0; i < Model.data.WordToGuess.Length; i++)
-        { 
-            //??pomocná array => [0,1,1,0,1] - 1 = zobraz, 0 = '_'
-            <p>_</p>
+    </div>
+    <div class="col-4">
+        @*Tady bude submit+input*@
+        <form method="post">
+            <label>Písmeno nebo celé slovo, které chcete hádat</label>
+            <input asp-for="guess" />
+            <button type="submit">Guess</button>
+        </form>
+    </div>
+    <div class="col-4">
+        @*Tady bude průběh hry*@
+        @{
+            for (int i = 0; i < Model.data.WordToGuess.Length; i++)
+            {
+                //??pomocná array => [0,1,1,0,1] - 1 = zobraz, 0 = '_'
+                <label>_</label>
+            }
         }
-    }
-    <p>Already tried: @Model.data.TriedChars</p>
+    <p>
+        Already tried:
+        @Model.data.TriedChars
+        @*Nevim jak to vypsat - foreach??*@
+    </p>
+    </div>
 </div>
