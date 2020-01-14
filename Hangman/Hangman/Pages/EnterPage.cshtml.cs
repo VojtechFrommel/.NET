@@ -22,15 +22,16 @@ namespace Hangman.Pages
         {
 
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
+            data.PlayerIndex = 0;
             //uložit players
-            //for (int i = 0; i < data.NumOfPlayers; i++)
-            //{
-            //    data.Players.Add(new Player(names[i], 0));
-            //}
+            for (int i = 0; i < data.NumOfPlayers; i++)
+            {
+                data.Players.Add(new Player(names[i], 0));
+            }
             //přepnout na game stránku
-            RedirectToPage("GamePage");
+            return RedirectToPage("GamePage");
         }
     }
 }
