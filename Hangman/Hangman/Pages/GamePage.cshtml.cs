@@ -25,6 +25,10 @@ namespace Hangman.Pages
         {
             charArray = guess.ToCharArray();
             //foreach - porovnej chararray s hádaným slovem. Pokud je chararray.len > 1 a netrefí se, tak hráč vypadne
+            foreach(char ch in charArray)
+            {
+
+            }
         }
     }
 }

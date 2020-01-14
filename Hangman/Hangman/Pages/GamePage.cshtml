@@ -28,5 +28,12 @@
 </div>
 <div class="col-4">
     @*Tady bude průběh hry*@
-    @{ }
+    @{ 
+        for (int i = 0; i < Model.data.WordToGuess.Length; i++)
+        { 
+            //??pomocná array => [0,1,1,0,1] - 1 = zobraz, 0 = '_'
+            <p>_</p>
+        }
+    }
+    <p>Already tried: @Model.data.TriedChars</p>
 </div>
