@@ -14,7 +14,9 @@ namespace Hangman.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private IData data;
-        public int numOfPlayers = 2;
+
+        [BindProperty]
+        public int NumOfPlayers { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger, IData data)
         {
@@ -28,14 +30,14 @@ namespace Hangman.Pages
         }
         public IActionResult OnPost()
         {
-            Debug.Write(numOfPlayers);
+            //Debug.Write(NumOfPlayers);
             //if (Convert.ToInt32(numOfPlayers) <= 0 || Convert.ToInt32(numOfPlayers) > 3) return RedirectToPage("Index");
             //else
             //{
             //    data.NumOfPlayers = Convert.ToInt32(numOfPlayers);
             //    return RedirectToPage("EnterPage");
             //} 
-            data.NumOfPlayers = numOfPlayers;
+            data.NumOfPlayers = NumOfPlayers;
             return RedirectToPage("EnterPage");
         }
     }

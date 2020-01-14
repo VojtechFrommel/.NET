@@ -10,10 +10,11 @@
     <div class="col-6">
         @*generování až 3 hráčů sem*@
         @{
-            @for (int i = 0; i != Model.data.NumOfPlayers; i++)
+            @for (int i = 1; i != Model.data.NumOfPlayers+1; i++)
             {
-                <label>Nickname</label>
-                <input asp-for="names[i]" />
+                <label>Player @i Nickname</label>
+                <input asp-for="names[i-1]" />
+                <br />
             }
         }
         <div>

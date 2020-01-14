@@ -8,25 +8,32 @@ namespace Hangman.Models
 {
     public class Data : IData
     {
-        private string _wordToGuess { get; set; }
+
+        #region Public fields
         public string WordToGuess { get { return _wordToGuess; } set { _wordToGuess = value; } }
-        private string[] _wordsToGuess { get; set; } = { "abyss", "void", "soul", "boggle", "ivory", "fjord" };
         public string[] WordsToGuess { get { return _wordsToGuess; } set { _wordsToGuess = value; } }
-        private string _winner { get; set; }
-        public string Winner { get { return _winner; } set { _winner = value; } }
-        private int _numOfPlayers { get; set; }
-        public int NumOfPlayers { get { return _numOfPlayers; } set { _numOfPlayers = value; } }
-        private int _playerIndex { get; set; }// = 0;
-        public int PlayerIndex { get { return _playerIndex; } set { _playerIndex = value; } }
-        private List<char> _triedChars { get; set; }
-        public List<char> TriedChars { get { return _triedChars; } set { _triedChars = value; } }
-        private List<Player> _players { get; set; }
         public List<Player> Players { get { return _players; } set { _players = value; } }
+        public List<char> TriedChars { get { return _triedChars; } set { _triedChars = value; } }
+        public int PlayerIndex { get { return _playerIndex; } set { _playerIndex = value; } }
+        public int NumOfPlayers { get { return _numOfPlayers; } set { _numOfPlayers = value; } }
+        public string Winner { get { return _winner; } set { _winner = value; } }
+        #endregion Public fields
+
+        #region Private fields
+        private string _wordToGuess;
+        private string[] _wordsToGuess;
+        private string _winner;
+        private int _numOfPlayers;
+        private int _playerIndex;
+        private List<char> _triedChars;
+        private List<Player> _players;
+        #endregion Private fields
 
         public Data()
         {
-            _wordToGuess = WordToGuess;
-            _numOfPlayers = NumOfPlayers;
+            _players = new List<Player>();
+            _wordsToGuess = new string[] { "abyss", "void", "soul", "boggle", "ivory", "fjord" };
+            _triedChars = new List<char>();
             _players = new List<Player>();
         }
     }
