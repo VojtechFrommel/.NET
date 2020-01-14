@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hangman.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ namespace Hangman.Models
         private string _winner { get; set; }
         private int _numOfPlayers { get; set; }
         private List<char> _triedChars { get; set; }
+        private List<Player> _players { get; set; }
         public Data()
         {
 
@@ -19,5 +21,6 @@ namespace Hangman.Models
         public string Winner { get { return _winner; } set { _winner = value; } }
         public int NumOfPlayers { get { return _numOfPlayers; } set { _numOfPlayers = value; } }
         public List<char> TriedChars { get { return _triedChars; } set { _triedChars = value; } }
+        public List<Player> Players { get { return _players; } set { _players = value; } }
     }
 }

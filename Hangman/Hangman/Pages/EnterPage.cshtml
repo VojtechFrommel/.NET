@@ -7,17 +7,16 @@
 <h1>EnterPage</h1>
 
 <div class="col-6">
-    @*informace o tom kdo je na řadě atd..*@
     @*generování až 3 hráčů sem*@
     @{
-        @for (int i = 0; i != 3; i++)
-        { 
+        @for (int i = 0; i != Model.data.NumOfPlayers; i++)
+        {
             <label>Nickname</label>
             <input />
             <p>texttext</p>
         }
      }
-</div>
-<div class="col-6">
-    @*Tady bude průběh hry*@
+    <div>
+        <button></button>
+    </div>
 </div>

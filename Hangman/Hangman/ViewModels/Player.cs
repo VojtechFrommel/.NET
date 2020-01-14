@@ -6,7 +6,7 @@ namespace Hangman.ViewModels
 {
     public class Player
     {
-        public Player(string nickname, int mistakes, IData data)
+        public Player(string nickname, int mistakes)
         {
             Nickname = nickname;
             Mistakes = mistakes;

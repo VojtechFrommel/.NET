@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Hangman.ViewModels;
+using System;
 using System.Collections.Generic;
 
 namespace Hangman.Models
@@ -9,5 +10,6 @@ namespace Hangman.Models
         string Winner { get; set; }
         int NumOfPlayers { get; set; }
         List<char> TriedChars { get; set; }
+        List<Player> Players { get; set; }
     }
 }
