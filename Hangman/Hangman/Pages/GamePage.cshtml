@@ -38,24 +38,26 @@
                     {
                         //??pomocná array => [0,1,1,0,1] - 1 = zobraz, 0 = '_'
                         if (Model.data.HelpGuessArray[i] == false)
-                        {<label>_</label>}
+                        {<label> _ </label>}
                         if (Model.data.HelpGuessArray[i] == true)
                         {<label>@Model.data.WordToGuess[i]</label>}
 
                     }
                 }
-                <p>
-                    Already tried:
-                    @{
-                        string.Join(",", Model.data.TriedChars);
-                        string.Join(",", Model.data.TriedWords);
-                    }
-                </p>
+            <p>
+                Tried letters:@string.Join(",", Model.data.TriedChars)
+            </p>
+            <p>
+                Tried words: @string.Join(",", Model.data.TriedWords)
+            </p>
+            <p>
+                Guess value: @Model.Guess
+            </p>
             </div>
         </div>
     }
     else
     {
-        <h2>Winner winner</h2>
+        <h2>Winner is: @Model.data.Winner</h2>
     }
 }

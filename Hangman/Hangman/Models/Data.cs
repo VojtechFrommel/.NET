@@ -36,7 +36,7 @@ namespace Hangman.Models
         public Data()
         {
             _players = new List<Player>();
-            _wordsToGuess = new string[] { "abyss", "void", "soul", "boggle", "ivory", "fjord" };
+            _wordsToGuess = new string[] { "abyss" };/*, "void", "soul", "boggle", "ivory", "fjord" };*/
             _triedChars = new List<char>();
             _triedWords = new List<string>();
             _players = new List<Player>();
