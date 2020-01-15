@@ -30,6 +30,8 @@ namespace Hangman.Pages
             //Vybrání random slova
             rnd = new Random();
             data.WordToGuess = data.WordsToGuess[rnd.Next(0, data.WordsToGuess.Length - 1)];
+            //inicializace helparray
+            data.HelpGuessArray = new bool[data.WordToGuess.Length]; //array of false
             //index hráče v pořadí
             data.PlayerIndex = 0;
             //uložit players
