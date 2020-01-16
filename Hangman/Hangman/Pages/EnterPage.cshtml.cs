@@ -19,7 +19,6 @@ namespace Hangman.Pages
         public EnterPageModel(IData data)
         {
             this.data = data;
-            //Names = new string[data.NumOfPlayers];
         }
         public void OnGet()
         {

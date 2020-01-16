@@ -26,18 +26,20 @@ namespace Hangman.Pages
         {
 
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
             guessed = false;
             //index = 0;
             winCharCounter = 0;
-            CharArray = Guess.ToCharArray();
 
-            if (CharArray.Length == 0) return;
-            if (data.Players.Count == 0) return;
+            
+
+            if (Guess == "" || Guess == null) return RedirectToPage("GamePage"); 
+            CharArray = Guess.ToCharArray();
+            if (data.Players.Count == 0) return RedirectToPage("GamePage");
 
             //Logika-each
-            foreach(char ch in CharArray)
+            foreach (char ch in CharArray)
             {
                 //Pokud je to CHAR
                 if (CharArray.Length == 1)
@@ -103,23 +105,12 @@ namespace Hangman.Pages
             {
                 data.TriedWords.Add(Guess);
             }
-            //
-            //resetování hodnot
-        }
-
-        [HttpPost]
-        public IActionResult WinForm(GamePageModel obj)
-        {
-            data.HelpGuessArray = new bool[0];
-            data.NumOfPlayers = 0;
-            data.PlayerIndex = 0;
-            data.Players.Clear();
-            data.TriedChars.Clear();
-            data.TriedWords.Clear();
-            data.Winner = null;
-            data.WordToGuess = null;
-
-            return RedirectToPage("Index");
+            //přepnutí na jinou stránku
+            if (data.Players.Count == 0 || data.Winner != null)
+            {
+                return RedirectToPage("FinalPage");
+            }
+            return RedirectToPage("GamePage");
         }
     }
 }
