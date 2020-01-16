@@ -125,3 +125,4 @@ C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangma
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.csproj.CopyComplete
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.dll
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.pdb
+C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Razor\Pages\FinalPage.cshtml.g.cs

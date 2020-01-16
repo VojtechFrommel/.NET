@@ -33,10 +33,8 @@ namespace Hangman.Pages
             winCharCounter = 0;
             CharArray = Guess.ToCharArray();
 
-            if (CharArray.Length == 0)
-            {
-                return;
-            }
+            if (CharArray.Length == 0) return;
+            if (data.Players.Count == 0) return;
 
             //Logika-each
             foreach(char ch in CharArray)
@@ -107,6 +105,21 @@ namespace Hangman.Pages
             }
             //
             //resetování hodnot
+        }
+
+        [HttpPost]
+        public IActionResult WinForm(GamePageModel obj)
+        {
+            data.HelpGuessArray = new bool[0];
+            data.NumOfPlayers = 0;
+            data.PlayerIndex = 0;
+            data.Players.Clear();
+            data.TriedChars.Clear();
+            data.TriedWords.Clear();
+            data.Winner = null;
+            data.WordToGuess = null;
+
+            return RedirectToPage("Index");
         }
     }
 }

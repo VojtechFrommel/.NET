@@ -4,9 +4,9 @@
     ViewData["Title"] = "GamePage";
 }
 
-<h1>GamePage</h1>
+<h1>Hangman</h1>
 @{
-    if (Model.data.Winner == null)
+    if (Model.data.Winner == null && Model.data.Players.Count != 0)
     {
         <div class="row">
             <div class="col-4">
@@ -17,9 +17,11 @@
                     @*generování až 3 hráčů s jejich jmény sem*@
                     @for (int i = 0; i != Model.data.NumOfPlayers; i++)
                     {
-                        <label>@Model.data.Players[i].Nickname</label>
-                        <br />
-                        <p>mistakes: @Model.data.Players[i].Mistakes/10</p>
+                        <div class="bg-light">
+                            <label>@Model.data.Players[i].Nickname</label>
+                            <br />
+                            <p>mistakes: @Model.data.Players[i].Mistakes/10</p>
+                        </div>
                     }
                 }
             </div>
@@ -28,7 +30,7 @@
                 <form method="post">
                     <label>Písmeno nebo celé slovo, které chcete hádat</label>
                     <input asp-for="Guess" />
-                    <button type="submit">Guess</button>
+                    <button class="bg-success" type="submit">Guess</button>
                 </form>
             </div>
             <div class="col-4">
@@ -38,26 +40,42 @@
                     {
                         //??pomocná array => [0,1,1,0,1] - 1 = zobraz, 0 = '_'
                         if (Model.data.HelpGuessArray[i] == false)
-                        {<label> _ </label>}
+                        {<label class="ml-1 mr-1">_</label>}
                         if (Model.data.HelpGuessArray[i] == true)
                         {<label>@Model.data.WordToGuess[i]</label>}
 
-                    }
                 }
-            <p>
-                Tried letters:@string.Join(",", Model.data.TriedChars)
-            </p>
-            <p>
-                Tried words: @string.Join(",", Model.data.TriedWords)
-            </p>
-            <p>
-                Guess value: @Model.Guess
-            </p>
+                }
+                <p>
+                    Tried letters:@string.Join(",", Model.data.TriedChars)
+                </p>
+                <p>
+                    Tried words: @string.Join(",", Model.data.TriedWords)
+                </p>
+                @*<p>
+                        Guess value: @Model.Guess
+                    </p>*@
             </div>
         </div>
     }
-    else
+    if (Model.data.Players.Count == 0)
+    {
+        <h2>Everyone was hanged!</h2>
+        @*<input type="submit" name="save" value="Save"
+            formaction="SaveForm" formmethod="post" />*@
+        <button type="submit" onclick="@Model.restartHangman()">PLAY AGAIN</button>
+    }
+    if (Model.data.Winner != null && Model.data.Players.Count != 0)
     {
         <h2>Winner is: @Model.data.Winner</h2>
+
+        @*<button type="submit" onclick="@Model.restartHangman()">PLAY AGAIN</button>*@
+        @using (Html.BeginForm())
+        {
+            @Html.EditorForModel()
+            <br />
+            <input type="submit" name="win" value="Restart"
+                   formaction="RestartForm" formmethod="post" />
+        }
     }
 }
