@@ -10,13 +10,13 @@
 <form method="post">
     <div>
         @{
-            if (Model.data.Players.Count == 0)
+            if (Model.hg.data.Mistakes != 10)
             {
-                <h2>Everyone was hanged!</h2>
+                <h2>You won!</h2>
             }
-            if (Model.data.Winner != null && Model.data.Players.Count != 0)
+            if (Model.hg.data.Mistakes == 10)
             {
-                <h2>Winner is: @Model.data.Winner</h2>
+                <h2>You were hanged!</h2>
             }
         }
         <button class="bg-success" type="submit">PLAY AGAIN</button>

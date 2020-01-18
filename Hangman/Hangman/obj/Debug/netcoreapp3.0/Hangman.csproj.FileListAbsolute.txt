@@ -103,7 +103,6 @@ C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangma
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.csprojAssemblyReference.cache
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\staticwebassets\Hangman.StaticWebAssets.Manifest.cache
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\staticwebassets\Hangman.StaticWebAssets.xml
-C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.RazorAssemblyInfo.cache
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.RazorAssemblyInfo.cs
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.AssemblyInfoInputs.cache
@@ -111,7 +110,6 @@ C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangma
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.TagHelpers.input.cache
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.TagHelpers.output.cache
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.RazorCoreGenerate.cache
-C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Razor\Pages\EnterPage.cshtml.g.cs
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Razor\Pages\Error.cshtml.g.cs
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Razor\Pages\GamePage.cshtml.g.cs
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Razor\Pages\Index.cshtml.g.cs
@@ -126,3 +124,5 @@ C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangma
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.dll
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.pdb
 C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Razor\Pages\FinalPage.cshtml.g.cs
+C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\obj\Debug\netcoreapp3.0\Hangman.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\uvojt\OneDrive\Documents\School\P4\Webové_aplikace\ASP.NET\.NET\Hangman\Hangman\bin\Debug\netcoreapp3.0\Utf8Json.dll

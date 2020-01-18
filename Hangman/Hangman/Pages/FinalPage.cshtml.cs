@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Hangman.Models;
+using Hangman.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -10,10 +11,11 @@ namespace Hangman.Pages
 {
     public class FinalPageModel : PageModel
     {
-        public IData data;
-        public FinalPageModel(IData data)
+        public HangmanService hg;
+        public FinalPageModel(HangmanService hangman)
         {
-            this.data = data;
+            this.hg = hangman;
+            hg.Load();
         }
         public void OnGet()
         {
@@ -21,15 +23,8 @@ namespace Hangman.Pages
         }
         public IActionResult OnPost()
         {
-            data.HelpGuessArray = new bool[0];
-            data.NumOfPlayers = 0;
-            data.PlayerIndex = 0;
-            data.Players.Clear();
-            data.TriedChars.Clear();
-            data.TriedWords.Clear();
-            data.Winner = null;
-            data.WordToGuess = null;
-
+            hg.NewGame();
+            hg.Save();
             return RedirectToPage("Index");
         }
     }

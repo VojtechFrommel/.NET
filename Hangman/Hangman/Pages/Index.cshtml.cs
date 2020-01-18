@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Hangman.Models;
+using Hangman.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
@@ -13,15 +14,16 @@ namespace Hangman.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        private IData data;
+        public HangmanService hg;
 
         [BindProperty]
         public int NumOfPlayers { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger, IData data)
+        public IndexModel(ILogger<IndexModel> logger, HangmanService hangman)
         {
             _logger = logger;
-            this.data = data;
+            this.hg = hangman;
+            hg.Load();
         }
 
         public void OnGet()
@@ -30,15 +32,8 @@ namespace Hangman.Pages
         }
         public IActionResult OnPost()
         {
-            //Debug.Write(NumOfPlayers);
-            //if (Convert.ToInt32(numOfPlayers) <= 0 || Convert.ToInt32(numOfPlayers) > 3) return RedirectToPage("Index");
-            //else
-            //{
-            //    data.NumOfPlayers = Convert.ToInt32(numOfPlayers);
-            //    return RedirectToPage("EnterPage");
-            //} 
-            data.NumOfPlayers = NumOfPlayers;
-            return RedirectToPage("EnterPage");
+            hg.Save();
+            return RedirectToPage("GamePage");
         }
     }
 }

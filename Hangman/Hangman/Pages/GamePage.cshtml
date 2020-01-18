@@ -5,25 +5,14 @@
 }
 
 <h1>Hangman</h1>
-@*@{
-    if (Model.data.Winner == null && Model.data.Players.Count != 0)
-    {*@
+
 <div class="row">
     <div class="col-4">
-        @{
-            @*informace o tom kdo je na řadě atd..*@
-            <label>Na řadě je hráč: @Model.data.Players[Model.data.PlayerIndex].Nickname</label>
-            <br />
-            @*generování až 3 hráčů s jejich jmény sem*@
-            @for (int i = 0; i != Model.data.NumOfPlayers; i++)
-            {
-                <div class="bg-light">
-                    <label>@Model.data.Players[i].Nickname</label>
-                    <br />
-                    <p>mistakes: @Model.data.Players[i].Mistakes/10</p>
-                </div>
-            }
-        }
+            <div class="bg-light">
+                <label>Player</label>
+                <br />
+                <p>mistakes: @Model.hg.data.Mistakes/10</p>
+            </div>
     </div>
     <div class="col-4">
         @*Tady bude submit+input*@
@@ -36,36 +25,16 @@
     <div class="col-4">
         @*Tady bude průběh hry*@
         @{
-            for (int i = 0; i < Model.data.WordToGuess.Length; i++)
+            for (int i = 0; i <  Model.hg.data.chars.Count; i++)
             {
-                //??pomocná array => [0,1,1,0,1] - 1 = zobraz, 0 = '_'
-                if (Model.data.HelpGuessArray[i] == false)
+                if (Model.hg.data.chars[i].IsVisible == false)
                 {<label class="ml-1 mr-1">_</label>}
-                if (Model.data.HelpGuessArray[i] == true)
-                {<label>@Model.data.WordToGuess[i]</label>}
-
-        }
+                if (Model.hg.data.chars[i].IsVisible == true)
+                {<label>@Model.hg.data.chars[i].Pismeno</label>}
+            }
         }
         <p>
-            Tried letters:@string.Join(",", Model.data.TriedChars)
+            Already tried:@string.Join(",", Model.hg.data.Tried)
         </p>
-        <p>
-            Tried words: @string.Join(",", Model.data.TriedWords)
-        </p>
-        @*<p>
-                Guess value: @Model.Guess
-            </p>*@
     </div>
 </div>
-    @*}*@
-    @*if (Model.data.Players.Count == 0)
-    {
-        <h2>Everyone was hanged!</h2>
-        <button type="submit">PLAY AGAIN</button>
-    }
-    if (Model.data.Winner != null && Model.data.Players.Count != 0)
-    {
-        <h2>Winner is: @Model.data.Winner</h2>
-        <button type="submit">PLAY AGAIN</button>
-    }*@
-@*}*@
