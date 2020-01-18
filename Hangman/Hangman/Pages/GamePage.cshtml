@@ -4,8 +4,6 @@
     ViewData["Title"] = "GamePage";
 }
 
-<h1>Hangman</h1>
-
 <div class="row">
     <div class="col-4">
             <div class="bg-light">
@@ -15,7 +13,7 @@
             </div>
     </div>
     <div class="col-4">
-        @*Tady bude submit+input*@
+        @*submit+input*@
         <form method="post">
             <label>Písmeno nebo celé slovo, které chcete hádat</label>
             <input asp-for="Guess" />
@@ -23,7 +21,7 @@
         </form>
     </div>
     <div class="col-4">
-        @*Tady bude průběh hry*@
+        @*průběh hry*@
         @{
             for (int i = 0; i <  Model.hg.data.chars.Count; i++)
             {

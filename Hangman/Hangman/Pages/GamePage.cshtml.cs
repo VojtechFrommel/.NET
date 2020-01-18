@@ -29,7 +29,8 @@ namespace Hangman.Pages
         }
         public IActionResult OnPost()
         {
-            hg.data.Tried.Add(Guess);
+            if(!hg.data.Tried.Contains(Guess)) hg.data.Tried.Add(Guess);
+
             redirect = hg.Guess(hg,Guess,guessed,index);
             hg.Save();
             if (redirect == true) return RedirectToPage("FinalPage");

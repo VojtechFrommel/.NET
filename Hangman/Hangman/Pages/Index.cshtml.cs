@@ -16,9 +16,6 @@ namespace Hangman.Pages
         private readonly ILogger<IndexModel> _logger;
         public HangmanService hg;
 
-        [BindProperty]
-        public int NumOfPlayers { get; set; }
-
         public IndexModel(ILogger<IndexModel> logger, HangmanService hangman)
         {
             _logger = logger;
